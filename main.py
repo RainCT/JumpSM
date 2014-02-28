@@ -2,18 +2,13 @@
 # -.- coding: utf-8 -.-
 
 import sys
-from PySide.QtCore import *
-from PySide.QtGui import *
-from PySide.QtDeclarative import QDeclarativeView
 
-def main():
-    app = QApplication(sys.argv)
-    view = QDeclarativeView()
-    url = QUrl('view.qml')
-    view.setSource(url)
-    view.setResizeMode(QDeclarativeView.SizeRootObjectToView)
-    view.show()
-    sys.exit(app.exec_())
+from kivy.app import App
+from kivy.uix.button import Button
+
+class TestApp(App):
+    def build(self):
+        return Button(text='Hello World')
 
 if __name__ == '__main__':
-    main()
+    TestApp().run()
